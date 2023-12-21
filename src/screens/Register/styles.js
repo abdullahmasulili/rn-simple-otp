@@ -24,4 +24,8 @@ export default styles = StyleSheet.create({
     height: 40,
     padding: 8,
   },
+  inputFocused: {
+    borderWidth: 2,
+    borderColor: "#f87171",
+  },
 });
