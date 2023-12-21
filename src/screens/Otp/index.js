@@ -11,7 +11,7 @@ import OtpInput from "~components/OtpInput";
 import Button from "~components/Button";
 
 export default function Otp({ navigation, route }) {
-  const { phone } = route.params || {};
+  const { phone, username } = route.params || {};
 
   const refTimer = useRef();
 
@@ -32,7 +32,7 @@ export default function Otp({ navigation, route }) {
   }
 
   function handleOtpFilled() {
-    navigation.navigate("Login");
+    navigation.navigate("Login", { username });
   }
 
   return (

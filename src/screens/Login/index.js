@@ -1,10 +1,23 @@
-import { View, Text } from "react-native";
+import { Text } from "react-native";
 import React from "react";
 
-export default function Login() {
+import { SafeAreaView } from "react-native-safe-area-context";
+
+import styles from "./styles";
+import GlobalStyles from "~helpers/GlobalStyles";
+
+import Button from "~components/Button";
+
+export default function Login({ navigation, route }) {
+  const { username } = route.params || {};
+
+  function handleLogout() {
+    navigation.navigate("Register");
+  }
   return (
-    <View>
-      <Text>Login</Text>
-    </View>
+    <SafeAreaView style={styles.container}>
+      <Text style={GlobalStyles.h1}>Welcome, {username}!</Text>
+      <Button caption="Logout" onPress={handleLogout} />
+    </SafeAreaView>
   );
 }

@@ -83,7 +83,7 @@ export default function Register({ navigation }) {
       });
     }
 
-    return navigation.navigate("Otp", { phone });
+    return navigation.navigate("Otp", { phone, username });
   }
 
   function validateInputs() {
