@@ -4,13 +4,19 @@ export default styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: "center",
+    justifyContent: "space-evenly",
+    marginVertical: 45,
   },
   header: {
     display: "flex",
     alignItems: "center",
     flexDirection: "column",
     gap: 10,
-    marginVertical: 45,
-    marginHorizontal: 15,
+  },
+  footer: {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    gap: 20,
   },
 });

@@ -3,7 +3,7 @@ import React, { useEffect, useRef, useState } from "react";
 
 import styles from "./styles";
 
-export default function OtpInput() {
+export default function OtpInput({ onFilled }) {
   const DIGIT_AMOUNT = 6;
   const inputsRef = useRef(
     Array(DIGIT_AMOUNT)
@@ -13,6 +13,14 @@ export default function OtpInput() {
 
   const [inputValue, setInputValue] = useState(Array(DIGIT_AMOUNT).fill(""));
   const [focusedInput, setFocusedInput] = useState(null);
+
+  useEffect(() => {
+    if (inputValue[DIGIT_AMOUNT - 1] === "") {
+      return;
+    }
+
+    onFilled();
+  }, [inputValue]);
 
   function handleTextChanged(index, text) {
     const nextIndex = index + 1;
